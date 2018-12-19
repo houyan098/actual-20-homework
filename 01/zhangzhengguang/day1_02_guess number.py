@@ -5,10 +5,10 @@ while count<5:
     random_num = random.randint(0, 100)
     usr_input=int(input("你猜！猜对了我嫁给你！"))
     if usr_input > random_num:
-        print("呵呵，你想多了！少猜点")
+        print("猜小了")
 
     elif usr_input < random_num:
-        print("穷限制了你的想象！多猜点")
+        print("猜大了")
     else:
         print("兄弟你可以去买彩票了！嫁给你是不存在的！")
         break
