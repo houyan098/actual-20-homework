@@ -17,3 +17,11 @@ while True:
         print(f'输入的数字大于随机数 {sum} 当前输入次数{count}')
     elif sum < num:
         print(f'输入的数字小于随机数 {sum} 当前输入次数{count}')
+
+
+'''
+批注: 3
+
+改进点：
+1. 注意exit和break区别
+'''
