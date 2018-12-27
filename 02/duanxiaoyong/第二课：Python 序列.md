@@ -1,5 +1,7 @@
-# <p align='center'>  python序列-课后总结 </p>
-![](https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3983194694,2216519494&fm=26&gp=0.jpg)
+# <p align='center'> python序列-课后总结 </p>
+
+
+
 列表（list）
 -
 #### list的特点
