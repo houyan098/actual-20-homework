@@ -1,5 +1,5 @@
 # <p align='center'>  python序列-课后总结 </p>
-![](https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1545920904113&di=6238d16a7033fcf99c3c514fdf5f097a&imgtype=0&src=http%3A%2F%2Fwx4.sinaimg.cn%2Forj360%2F006xpDOjgy1fxnhqsr2dhj30j60dyaak.jpg)
+![](https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3983194694,2216519494&fm=26&gp=0.jpg)
 列表（list）
 -
 #### list的特点
