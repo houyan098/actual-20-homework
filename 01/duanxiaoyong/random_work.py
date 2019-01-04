@@ -16,11 +16,11 @@ while count <5:
         break
     elif random_number > random_dxy:
         print('抱歉！你猜大了！你重新猜测！')
-        count +=1
     else:
         print('抱歉！你猜小了！你重新猜测！')
-        count +=1
-        continue
+
+    count +=1
+
 print('太笨了！下次再来吧！')
 
 
