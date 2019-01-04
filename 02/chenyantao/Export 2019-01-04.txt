@@ -1,0 +1,239 @@
+﻿	Python
+		Control Flow
+			Conditions
+				Elif
+				Else
+				If
+			Cycles
+				Break
+				Continue
+				While
+		Input
+		Object
+			Classes
+			Dictionaries
+				遍历
+					for
+				定义
+					每个元素为key:value的格式
+					使用大括号包含
+					元素之间使用逗号分隔
+				访问
+				函数
+					clear 清空dict中的元素
+					copy 复制dict中的所有元素到新dict中并返回
+					fromkeys 根据序列生成dict，序列中所有元素作为key，value为fromkeys的第二个参数，默认为None
+					get 返回dict中key对应的值，若key不存在则返回默认值
+					items 将dict转化为由每个元素均为两个子元素的序列组成的dict_items，可通过list将dict_items转化为list
+					keys 返回dict中所有的key组成的dict_keys
+					pop 通过key弹出字典中的元素，未设置默认值，当key不存在则报错，否则返回默认值
+					popitem 返回dict中的某个元素组成的元组(key, value)
+					setdefault 设置dict中key的默认值（key不存在则设置）并返回dict中key的当前值
+					update 通过dict批量更新或添加dict中的值
+					values 返回dict中所有value组成的dict_values
+				类型转换
+					dict
+				修改
+			Files
+				结构化文本文件
+				文件操作
+					打开
+						open
+					读文件
+						.read()  读取文件所有内容
+						.read(size)  读取文件size个字节内容
+						.readline()  读取文件一行
+						.readlines()  读取文件所有行
+					关闭
+						close
+					写文件
+						.flush() 内存数据到硬盘
+						.write () 写入字符串
+						.writelines() 写入多个字符串( 字符串组成的序列)
+			Functions
+				传值
+				传址
+				定义
+					()定义函数参数
+					:表示函数定义语句结束
+					say_hello为函数名，需要满足python变量命名规范
+					使用def关键字定义函数
+					使用缩进代码块定义函数体
+				可变参数
+				调用
+					使用函数名()进行函数调用（执行函数体内代码）
+				作用域
+			Lists
+				Functions
+					- >>> birthday = "12/25/1981">>> birthday.split('/')['12', '25', '1981']
+					append
+					clear
+					copy
+					count
+					extend
+					index
+					pop
+						- pop(0) 头元素
+						- pop()/pop(-1) 尾元素
+					Range
+					remove
+					reverse
+					sort
+					Split
+					查看函数使用方法
+					查看可用函数
+				Operations
+					遍历
+						for
+					访问
+					获取元素数量
+						len
+					快速创建
+						range
+					类型转换
+						list
+					判断元素是否存在
+					切片
+					删除元素
+					四则运算
+					修改
+					元素最大值/最小值
+						max/min
+				定义
+					可包含任意数据类型
+					使用中括号
+					元素之间通过逗号间隔
+				特点
+					编号
+					可遍历
+					可插入
+					可弹出
+					可删除
+					可修改
+					可追加
+					有序
+					长度不定
+			Modules
+			Numbers
+				操作
+					四则运算
+				类型
+					浮点
+					整数
+			Other types
+				Booleans
+				None
+				Types
+			Sets
+				遍历
+					for
+				定义
+					每个元素之间使用逗号分隔
+					使用大括号包含
+					只能包含不可变数据类型
+				函数
+					union
+					update
+				获取元素数量
+					len
+				获取最大值/最小值
+					max/min
+				类型转换
+					set
+				判断存在
+					in
+			Strings
+				操作
+					遍历
+						for
+					访问
+					获取元素数量
+						len
+					获取最大值/最小值
+						max/min
+					类型转换
+						str
+					判断存在
+						in
+					四则运算
+				定义
+					使用单引号、双引号、三个单引号或三个双引号引起来的一些字符
+				函数
+					count 计算字符串中出现子字符串的次数
+					endswith/startswith 判断字符串是否以参数结尾/开头
+					find 计算字符串中出现子字符串位置，若不存在则返回-1
+					format 格式化字符串
+					index 计算字符串中出现子字符串位置，若不存在则报错
+					isalnum/isalpha/isdigit/isnumeric 判断字符串是否某类型的字符串
+					join 使用字符串连接序列
+					lower/upper 将字符串转成小写/大写
+					replace 替换字符串
+					split/splitlines 分隔字符串为list
+					strip 去除字符串前后的空字符
+				特殊字符
+					\ : 转义符
+					\f: 换页
+					\n: 换行
+					\r: 回车
+					\t: tab键
+			Tuple
+				- 元祖占用空间小
+				- 值不会被意外修改
+				- 可被用来做字典的键
+				Definition
+					不可变
+					可包含任意数据类型
+					如果只有一个元素，元素后面的逗号不能省略
+					使用小括号
+					元素之间通过逗号间隔
+				Functions
+					count
+					index
+				Operations
+					遍历
+						for
+					访问
+					获取元素数量
+						len
+					获取最大值/最小值
+						max/min
+					类型转换
+						tuple
+					切片
+					四则运算
+					元祖解包
+						- mark_tuple = ('Groucho','Chico','Harpo')a, b, c = mark_tuple
+					元祖解包
+		Packages
+			Django
+			Flask
+			GUI
+			Matplotlib
+			NumPy
+				Pandas
+			Pygame
+		Print
+		Variations
+			规则
+				避免和python保留字和关键字冲突
+				不能以数字开头
+				只能由Unicode字符、数字、下划线组成
+					- 不能包含空格，引号等特殊字符，建议使用大小写英文字母
+		正则表达式
+应用场景
+	Web编程
+	黑客（POC脚本、木马）
+	数学处理（数据分析、机器学习）
+	图形处理、多媒体应用
+	网络编程
+	文本处理（爬虫）
+	系统任务管理
+	游戏开发
+	云计算
+	运维开发
+	自动化测试
+资源
+	github
+	oschina
+	pypi
+	StackOverFlow
