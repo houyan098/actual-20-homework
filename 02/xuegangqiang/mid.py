@@ -49,3 +49,10 @@ while idx_min <= idx_max:
 
     # 格式化输出，便于理解每次比对情况
     print('第{0}次, idx_min:{1}, mdx_max:{2}，mid:{3}'.format(count, idx_min, idx_max, mid))
+
+
+'''
+批注： 5
+1. 代码思路清晰
+
+'''

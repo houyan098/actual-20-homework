@@ -15,3 +15,10 @@ def insert_sort(ary):
 ary=[5,4,5,7,9,3,2,3,4]
 
 print(insert_sort(ary))
+
+'''
+批注： 8
+1. 代码思路清晰
+2. 使用了函数
+
+'''

@@ -15,3 +15,10 @@ if num.isnumeric() and int(num) not in list_:
     print(list_)
 else:
     print('Please input a number or entered is already in the list!')
+
+
+'''
+批注： 2
+1. 插入逻辑正确，但是并非为插入排序
+
+'''

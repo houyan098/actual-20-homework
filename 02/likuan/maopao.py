@@ -8,3 +8,8 @@ for j in range(len(a)-1):
             a[i] = a[i+1]
             a[i+1] = tmp
 print(a)
+
+'''
+批注： 5
+1. 思路和流程清晰
+'''

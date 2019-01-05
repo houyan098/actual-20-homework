@@ -13,3 +13,11 @@ def search(data_set,value):
 
 data_set =  list(range(100))
 print(search(data_set,36))
+
+
+'''
+批注： 8
+1. 代码思路清晰
+2. 使用了函数
+
+'''

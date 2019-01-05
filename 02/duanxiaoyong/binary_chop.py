@@ -54,3 +54,15 @@ def binary_list(len_list, find_num):
 
 data=list(range(1,1000))
 binary_list(data,999)
+
+
+'''
+批注: 2.5
+
+
+改进点:
+1. 首先测试代码
+2. 考虑29行用途和二分查找的用途
+3. 考虑方法2 45行用途，如果数组就有一个元素呢
+
+'''
