@@ -50,13 +50,13 @@ def deco(f):
     if name not in st.keys():
         return 'name not right!'
     def modify(name):
-        f(name)
+        f(name)   # 调用查询校验学生信息的find函数
         if input('do u want to modify the student\'s info(y/n):') == 'y':
             i = input('what do u want to modify?:')
             index1 = st[name].index(i)
             st[name][index1] = input('input modified info:')
-            '''pickle 修改后的信息序列化至新文件中'''
-            f2 = open('student_new','wb')
+            
+            f2 = open('student_new','wb') # pickle 修改后的信息序列化至新文件中
             pickle.dump(st,f2)
 
         print(st)
