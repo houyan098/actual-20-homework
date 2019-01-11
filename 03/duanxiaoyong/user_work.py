@@ -1,14 +1,31 @@
 #encoding: utf-8
 # Author:duanxiaoyong
 # Python 3.6
-
-users ={}
+'''
+作业要求：用户管理
+让用户在控制台上输入”find/list/add/delete/update/exit”格式字符串
+如果输入add，则让用户继续输入”用户名:年龄:联系方式”格式字符串，去除前后空字符，并使用:分隔用户数据，将用户数据放入dict中存储，用户名作为key，value使用{name: 用户名, age: 年龄，tel:联系方式}，在放入dict之前检查用户名不重复，如果重复，则提示用户已存在
+如果输入delete，则让用户输入”用户名”格式字符串，根据用户名查找dict中数据，若存在数据则将该数据移除，若用户数据不存在，则提示不存在
+如果输入update，则让用户输入”用户名:年龄:联系方式”格式字符串，并使用:分隔用户数据，根据用户名查找dcit中数据，若存在数据则将改数据更新数据，若用户数据不存在，则提示不存在
+如果用户输入find，则让用户输入”用户名”格式字符串，根据用户名查找dict中数据包含输入字符串的用户信息，并打印
+如果用户输入dict，则打印所有用户信息
+打印用户第一个行数据为用户信息描述，从第二行开始为用户数据
+如果用户输入exit，则打印退出程序，并退出
+要求：年龄必须大于10或者小于80 范围值
+'''
+users = dict()
 
 tpl = '|{:^10}|{:^5}|{:^15}|'
 keys = ('name','age','tel')
 header = tpl.format(keys[0],keys[1],keys[2])
 header_str = '-' * len(header)
 
+
+#初始化的欢迎信息
+print('*********************************************************************')
+print('*                     Welcome to User Management                    *')
+print('*        You can select a menu number to choose an operation        *')
+print('*********************************************************************')
 
 def print_format():
     print(header_str)
@@ -55,7 +72,7 @@ while True:
             # users[user_name]['age'] = users_dict.get('age')
             print('用户已更新!')
         else:
-            print('用户的信息不存在！')
+            print('用户信息不存在！')
 
     elif action =='find':
         name = input('请输入查找的用户名：')
