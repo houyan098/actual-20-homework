@@ -14,7 +14,7 @@ action = input("请输入你要进行的操作(query/modify/add/del):")
 # 定义判断年纪的函数
 def age(arg):
     if not arg >= 18 and arg <= 80:
-        print("输入的信息错误!") 
+        print("输入的信息错误!")
         exit()
 
 # query 函数
@@ -24,7 +24,7 @@ def user_query():
         if query in [str(student['id']),student['name'],student['sex'],str(student['age']),str(student['add'])]:
             print(student)
         else:
-            print("输入的查询内容不存在!") 
+            print("输入的查询内容不存在!")
 
 # modify函数
 def user_modify():
@@ -43,7 +43,7 @@ def user_modify():
                 age_modify = int(input("请输入用户的年龄:"))
                 age(age_modify)
                 student['age'] = age
-                student['tel'] = input("请输入电话号码:") 
+                student['tel'] = input("请输入电话号码:")
                 student['address'] = input("请输入家庭地址:")
                 print("修改后的用户信息是:",student)
                 break
@@ -62,7 +62,7 @@ def user_add():
     # 找到目前最后一个元素的ID，添加的数据的ID是这一个ID加1
     id = students[-1]['id'] + 1
     print("当前ID是:",id)
-    name = input("请输入用户的姓名:") 
+    name = input("请输入用户的姓名:")
     sex = input("请输入用户的性别:")
     age_add = int(input("请输入用户的年龄:"))
     age(age_add)
@@ -106,3 +106,21 @@ elif action == 'del':
 else:
     print("请输入正确的操作(query/modify/add/del)")
     exit()
+
+
+'''
+批注: 7.5
+
+优点:
+1. 学习函数，使用函数组织代码
+2. 编写不完全的增删改查版本
+3. 对用户操作进行回显
+4. 考虑到list中用户数据ID递增，使用最后一位学生id+1 作为新学生ID
+5. 修改用户直接使用用户的引用
+
+
+改进点:
+1. 代码中尽量不要使用exit功能直接结束程序
+2. 考虑用循环让用户输入操作指令进行循环操作
+
+'''

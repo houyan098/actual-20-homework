@@ -53,7 +53,7 @@ def deco(f):
         if result is not None:  #校验学生信息
             print(result)      #校验不通过返回详细错误值
             return '输入错误'
-          
+
         if input('do u want to modify the student\'s info(y/n):') == 'y':
             '''实现修改功能，以此类推可实现插入、删除'''
             i = input('what do u want to modify?:')
@@ -86,3 +86,15 @@ def find():
         print(name,st[name])
 
 find()  #执行
+
+
+
+'''
+批注: 2
+
+优点:
+1. 自学能力强，学习函数以及装饰器的使用、文件使用、pickle模块使用
+
+建议：
+1. 在基础知识的基础上进行扩展学习
+'''

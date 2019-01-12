@@ -12,7 +12,7 @@ idx = 0
 
 for index,student in enumerate(students):
 	if idx < index:
-		idx = index 
+		idx = index
 idx = idx + 1
 
 print('当前用户的编号:', idx + 1)
@@ -32,6 +32,14 @@ students.append(student)
 print('所有学生信息:', students)
 
 
+'''
+批注: 7
+
+
+改进点:
+1. 用户编号由系统生成，考虑13到16行代码用途
+2. 对数据类型转换时进行是否可进行转换检查
+'''
 
 
 

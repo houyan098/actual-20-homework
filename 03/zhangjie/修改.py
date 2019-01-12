@@ -11,7 +11,7 @@ student = None
 idx = int(input('请输入需要修改的用户编号信息: '))
 for index,student in enumerate(students):
 	if idx == index:
-		print('需要修改的用户信息是: %s' %(students[idx])) 
+		print('需要修改的用户信息是: %s' %(students[idx]))
 		student = students[idx]
 		_input = input('确认需要修改用户的信息吗:y/n: ')
 		if _input == 'y':
@@ -33,15 +33,9 @@ print('所有学生信息:', students)
 
 
 
+'''
+批注: 7
 
-
-
-
-
-
-
-
-
-
-
-
+改进点:
+1. 注意保持数据类型一致性
+'''
