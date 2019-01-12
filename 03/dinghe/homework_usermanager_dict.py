@@ -5,6 +5,7 @@
     # 2. 用户查询想实现模糊查询，没有思路
     # 3. 新增用户没有实现排重
     # 4. 查询结果没有格式化
+    # 5. 年龄的判断还在优化
 
 
 students = [
@@ -28,8 +29,8 @@ def help_info():
     print('退出请输入exit/quit')
 
 
-action = ''
 while True:
+    # 打印帮助信息
     help_info()
     # 接收用户输入
     action = input('请输入你的操作：')
@@ -59,9 +60,11 @@ while True:
             # 想实现模糊搜索，但没有思路
             if (input_name == student['name'] and input_sex == student['sex'] and input_age == student['age'] and input_phone == student['telphone'] and input_address == student['address']):
                 select_cnt += 1
+                # 如果匹配到，就打印信息
                 for key, value in student.items():
                     print('%s : %s' % (key, value))
                 break
+        # 没查询到用户的处理
         if select_cnt == 0:
             print('您查找的用户不存在!!!\n')
 
@@ -83,7 +86,7 @@ while True:
         input_phone = input('请输入你的电话: ')
         input_address = input('请输入你的地址: ')
 
-        # 定义临时列表
+        # 定义临时列表，用来取最大ID
         tmp_list = []
         # 获取所有用户ID，取最大值+1
         for student in students:
@@ -120,9 +123,11 @@ while True:
         for student in students:
             if (input_name == student['name'] and input_sex == student['sex'] and input_age == student['age'] and input_phone == student['telphone'] and input_address == student['address']):
                 user_info = {'user_id': student['user_id'], 'name': input_name, 'sex': input_sex, 'age': input_age, 'telphone': input_phone, 'address': input_address}
+                # 如果匹配到就删除
                 students.remove(user_info)
                 print('删除成功！')
                 continue
+        # 为查询到结果处理
         if select_cnt == 0:
             print('您查找的用户不存在!!!\n')
 
