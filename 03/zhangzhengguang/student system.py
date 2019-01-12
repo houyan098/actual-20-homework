@@ -47,28 +47,31 @@ st = pickle.loads(f1.read())
 #装饰器-实现修改功能
 def deco(f):
     '''该装饰器为了修改学生信息'''
-    if name not in st.keys():
-        return 'name not right!'
-    def modify(name):
-        f(name)   # 调用查询校验学生信息的find函数
+    def modify():
+        result = f()  #调用find()函数
+        if '错误' in result:  #校验学生信息
+            print(result)      #校验不通过返回详细错误值
+            return '输入错误'
+
         if input('do u want to modify the student\'s info(y/n):') == 'y':
+            '''实现修改功能，以此类推可实现插入、删除'''
             i = input('what do u want to modify?:')
             index1 = st[name].index(i)
             st[name][index1] = input('input modified info:')
-            
+
             f2 = open('student_new','wb') # pickle 修改后的信息序列化至新文件中
             pickle.dump(st,f2)
 
         print(st)
     return modify
 
-name = input('请输入查询的学生姓名：')  #把这个单独拿出来是为了节省代码，实际可直接放到源函数中
+name = input('请输入查询的学生姓名：')  #无处安放的灵魂。。先放这吧。。
 
 @deco
-def find(name):
+def find():
     # name = input('请输入查询的学生姓名：')
-    # if name not in st.keys():
-    #     return '输入name错误'
+    if name not in st.keys():
+        return '输入name错误'
     sex = input('请输入学生的性别：')
     if sex not in st[name]:
         return '输入sex错误'
@@ -81,4 +84,4 @@ def find(name):
     else:
         print(name,st[name])
 
-find(name)  #执行
+find()  #执行
