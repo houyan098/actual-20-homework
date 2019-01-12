@@ -44,15 +44,16 @@ st = pickle.loads(f1.read())
 
 '''修改'''
 
-#装饰器-实现修改功能
+#装饰器-实现修改功能    不能修改名字。。。。
 def deco(f):
     '''该装饰器为了修改学生信息'''
     def modify():
         result = f()  #调用find()函数
-        if '错误' in result:  #校验学生信息
+        # print(result)
+        if result is not None:  #校验学生信息
             print(result)      #校验不通过返回详细错误值
             return '输入错误'
-
+          
         if input('do u want to modify the student\'s info(y/n):') == 'y':
             '''实现修改功能，以此类推可实现插入、删除'''
             i = input('what do u want to modify?:')
@@ -62,7 +63,7 @@ def deco(f):
             f2 = open('student_new','wb') # pickle 修改后的信息序列化至新文件中
             pickle.dump(st,f2)
 
-        print(st)
+        print(st[name])
     return modify
 
 name = input('请输入查询的学生姓名：')  #无处安放的灵魂。。先放这吧。。
