@@ -1,5 +1,11 @@
 # conding:utf-8
 
+# 备注：
+    # 1. 由于函数不熟悉，所以没有把用户输入合并
+    # 2. 用户查询想实现模糊查询，没有思路
+    # 3. 新增用户没有实现排重
+    # 4. 查询结果没有格式化
+
 
 students = [
     {'user_id': 1, 'name': 'kk', 'sex': '男', 'age': 30, 'telphone': '15200000000', 'address': '西安市'},
@@ -30,16 +36,34 @@ while True:
     # 进入查询逻辑
     if action == 'query':
         # 接收用户id
+        input_name = input('请输入你的用户名: ')
+        input_sex = input('请输入你的性别: ')
+        input_age = input('请输入你的年龄: ')
+        # 判断用户输入年龄是否符合标准
+        if input_age.isdigit():
+            if int(input_age) > 0 and int(input_age) < 80:
+                input_age = int(input_age)
+            else:
+                print('请输入正确的年龄')
+                break
+        else:
+            print('请输入正确的年龄')
+            break
+        input_phone = input('请输入你的电话: ')
+        input_address = input('请输入你的地址: ')
+        # 查询匹配次数变量,用来判断是否有结果返回
         select_cnt = 0
-        user_name = input('请输入你的用户名: ')
+
+        # 遍历列表，判断查询是否有查询结果
         for student in students:
-            if user_name == student.get('name'):
+            # 想实现模糊搜索，但没有思路
+            if (input_name == student['name'] and input_sex == student['sex'] and input_age == student['age'] and input_phone == student['telphone'] and input_address == student['address']):
                 select_cnt += 1
                 for key, value in student.items():
                     print('%s : %s' % (key, value))
-                    break
+                break
         if select_cnt == 0:
-            print('您查找的用户不存在!')
+            print('您查找的用户不存在!!!\n')
 
     elif action == 'insert':
         # 接收用户输入
@@ -90,24 +114,91 @@ while True:
             break
         input_phone = input('请输入你的电话: ')
         input_address = input('请输入你的地址: ')
+        select_cnt = 0
 
         # 遍历列表中的字典，并删除
         for student in students:
-            if (input_name == student['name'] and input_sex == student['age'] and input_age == student['age'] and input_phone == student['telphone'] and input_address == student['address']):
+            if (input_name == student['name'] and input_sex == student['sex'] and input_age == student['age'] and input_phone == student['telphone'] and input_address == student['address']):
                 user_info = {'user_id': student['user_id'], 'name': input_name, 'sex': input_sex, 'age': input_age, 'telphone': input_phone, 'address': input_address}
-                print(user_info)
-                del students[user_info]
+                students.remove(user_info)
                 print('删除成功！')
-                print(students)
                 continue
+        if select_cnt == 0:
+            print('您查找的用户不存在!!!\n')
 
     elif action == 'update':
-        pass
+        # 进入修改逻辑，先查询，后修改
+        # 接收用户输入
+        input_name = input('请输入你的用户名: ')
+        input_sex = input('请输入你的性别: ')
+        input_age = input('请输入你的年龄: ')
+        # 判断用户输入年龄是否符合标准
+        if input_age.isdigit():
+            if int(input_age) > 0 and int(input_age) < 80:
+                input_age = int(input_age)
+            else:
+                print('请输入正确的年龄')
+                break
+        else:
+            print('请输入正确的年龄')
+            break
+        input_phone = input('请输入你的电话: ')
+        input_address = input('请输入你的地址: ')
+
+        select_cnt = 0
+
+        # 遍历列表，判断查询是否有查询结果
+        for student in students:
+            # 想实现模糊搜索，但没有思路
+            if (input_name == student['name'] and input_sex == student['sex'] and input_age == student['age'] and input_phone == student['telphone'] and input_address == student['address']):
+                # 用来定义索引
+                user_info = {'user_id': student['user_id'], 'name': input_name, 'sex': input_sex, 'age': input_age, 'telphone': input_phone, 'address': input_address}
+                # 配置统计次数，判断是否有匹配结果
+                select_cnt += 1
+                # 打印匹配到的信息
+                for key, value in student.items():
+                    print('%s : %s' % (key, value))
+                # 接收用户是否修改
+                motify_operation = input('请问是否需要修改？（Y/N）')
+
+                # 进入修改逻辑
+                if motify_operation == 'y' or motify_operation == 'Y':
+                    # 接收用户输入
+                    motify_name = input('请输入新的用户名: ')
+                    motify_sex = input('请输入新的性别: ')
+                    motify_age = input('请输入新的年龄: ')
+                    # 判断用户输入年龄是否符合标准
+                    if motify_age.isdigit():
+                        if int(motify_age) > 0 and int(motify_age) < 80:
+                            motify_age = int(motify_age)
+                        else:
+                            print('请输入新的的年龄')
+                            break
+                    else:
+                        print('请输入正确的年龄')
+                        break
+                    motify_phone = input('请输入新的电话: ')
+                    motify_address = input('请输入新的地址: ')
+
+                    # 设置修改后的用户信息
+                    motify_user_info = {'user_id': student['user_id'], 'name': motify_name, 'sex': motify_sex, 'age': motify_age, 'telphone': motify_phone, 'address': motify_address}
+                    # 获取索引位置
+                    motify_user_index = students.index(user_info)
+                    # 修改信息
+                    students[motify_user_index] = motify_user_info
+                    print('信息修改成功')
+                    continue
+        if select_cnt == 0:
+            print('您查找的用户不存在!!!\n')
+
     elif action == 'list':
+        # 遍历所有人的信息，格式化没做
         for user_info in students:
             print(user_info)
+    # 退出机制
     elif action == 'quit' or action == 'exit':
         break
+    # 其他情况处理
     else:
         print('您输入的有误，请重新输入')
         continue
