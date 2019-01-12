@@ -8,7 +8,7 @@ for i in range(1,len(num)):
 			if num[i] > num[j]:
 				num.insert(j+1,num[i])
 				num.pop(i+1)
-#			print('11')		测试
+#				print('11')	测试
 				break
 			else:
 				j = j-1
@@ -18,7 +18,6 @@ for i in range(1,len(num)):
 			num.pop(i+1)
 #			print('22')		测试
 	print(num)
-
 
 
 '''
